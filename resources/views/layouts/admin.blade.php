@@ -11,26 +11,27 @@
 
 
     <!-- Scripts -->
-    <script src="Admin/js/popper.min.js"></script>
-    <script src="Admin/js/bootstrap.min.js"></script>
-    <script src="Admin/js/perfect-scrollbar.min.js"></script>
-    <script src="Admin/js/smooth-scrollbar.min.js"></script>
+    <script src="/Admin/js/popper.min.js"></script>
+    <script src="/Admin/js/bootstrap.min.js"></script>
+    <script src="/Admin/js/perfect-scrollbar.min.js"></script>
+    <script src=/Admin/js/smooth-scrollbar.min.js"></script>
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="Admin/js/material-dashboard.min.js"></script>
+    <script src="/Admin/js/material-dashboard.min.js"></script>
 
 
     <!--       Fonts and icons       -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <!-- Nucleo Icons -->
-    <link href="Admin/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="Admin/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="/Admin/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="/Admin/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <!-- Style -->
-    <link href="Admin/css/material-dashboard.css" rel="stylesheet" />
+    <link href="/Admin/css/material-dashboard.css" rel="stylesheet" />
+    <link href="/Admin/css/custom.css" rel="stylesheet" />
 
 </head>
 <body>
