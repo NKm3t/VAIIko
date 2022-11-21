@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-white active bg-gradient-primary" href="{{ url('dashboard') }}">
+                <a class="nav-link text-white {{ Request::is('dashboard') ? 'active bg-gradient-primary':'' }} " href="{{ url('dashboard') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">dashboard</i>
                     </div>
@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="{{ url('category') }}">
+                <a class="nav-link text-white {{ Request::is('category') ? 'active bg-gradient-primary':'' }}" href="{{ url('category') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">content_paste</i>
                     </div>
@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="{{ url('add-category') }}">
+                <a class="nav-link text-white {{ Request::is('add-category') ? 'active bg-gradient-primary':'' }}" href="{{ url('add-category') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">add</i>
                     </div>
@@ -33,11 +33,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="../pages/tables.html">
+                <a class="nav-link text-white {{ Request::is('products') ? 'active bg-gradient-primary':'' }}" href="{{ url('products') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">content_paste</i>
                     </div>
-                    <span class="nav-link-text ms-1">Table list</span>
+                    <span class="nav-link-text ms-1">Produkty</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ Request::is('add-products') ? 'active bg-gradient-primary':'' }}" href="{{ url('add-products') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">add</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Pridať produkt</span>
                 </a>
             </li>
         </ul>

@@ -26,8 +26,8 @@
                                 <img src="{{ asset('assets/uploads/category/'.$item->image) }}" class="cate-image" alt="Obrázok tu">
                             </td>
                             <td>
-                                <a href="{{ url('edit-prod/'.$item->id) }}" class="btn btn-primary">Upraviť</a>
-                                <a href="{{ url('delete-category/'.$item->id) }}" class="btn btn-danger">Vymazať</a>
+                                <a href="{{ url('edit-category/'.$item->id) }}" class="btn btn-primary btn-sm">Upraviť</a>
+                                <a href="{{ url('delete-category/'.$item->id) }}" class="btn btn-danger btn-sm">Vymazať</a>
                             </td>
                         </tr>
                     @endforeach
