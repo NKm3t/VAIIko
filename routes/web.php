@@ -22,6 +22,8 @@ use App\Http\Controllers\Frontend\FrontendController;
 */
 
 Route::get('/', [FrontendController::class, 'index']);
+Route::get('fcategory', [FrontendController::class, 'fcategory']);
+Route::get('view-fcategory/{id}', [FrontendController::class, 'viewfcategory']);
 
 Auth::routes();
 

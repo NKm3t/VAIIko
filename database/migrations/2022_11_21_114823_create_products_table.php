@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('selling_price');
             $table->string('image');
             $table->string('tax');
+            $table->tinyInteger('status')->default('0');
             $table->tinyInteger('trending')->default('0');
             $table->timestamps();
         });

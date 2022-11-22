@@ -40,6 +40,10 @@
                         <input type="number" value="{{ $products->tax }}" name="tax" class="form-control border">
                     </div>
                     <div class="col-md-6 mb-3">
+                        <label for="">Status</label>
+                        <input type="checkbox" {{ $products->status == "1" ? 'checked' : '' }} name="status">
+                    </div>
+                    <div class="col-md-6 mb-3">
                         <label for="">Trend</label>
                         <input type="checkbox" value="{{ $products->trending == "1" ? 'checked' : '' }}" name="trending">
                     </div>

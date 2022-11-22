@@ -40,6 +40,7 @@ class ProductController extends Controller
         $products->original_price = $request->input('original_price');
         $products->selling_price = $request->input('selling_price');
         $products->tax = $request->input('tax');
+        $products->status = $request->input('status') == TRUE ? '1':'0';
         $products->trending = $request->input('trending') == TRUE ? '1':'0';
         $products->save();
         return redirect('products')->with('status', "Produkt uspesne pridany");
@@ -75,6 +76,7 @@ class ProductController extends Controller
         $products->original_price = $request->input('original_price');
         $products->selling_price = $request->input('selling_price');
         $products->tax = $request->input('tax');
+        $products->status = $request->input('status') == TRUE ? '1':'0';
         $products->trending = $request->input('trending') == TRUE ? '1':'0';
         $products->update();
         return redirect('products')->with('status', "Produkt uspesne aktualizovany");

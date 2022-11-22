@@ -18,6 +18,7 @@ class Product extends Model
         'selling_price',
         'image',
         'tax',
+        'status',
         'trending',
     ];
 

@@ -22,6 +22,11 @@
     <link href="/Frontend/CSS/custom.css" rel="stylesheet" />
     <link href="/Frontend/CSS/owl.carousel.min.css" rel="stylesheet" />
     <link href="/Frontend/CSS/owl.theme.default.min.css" rel="stylesheet" />
+    <style>
+        a{
+            color: #000;
+        }
+    </style>
 
 </head>
 <body>
