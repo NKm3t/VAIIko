@@ -35,6 +35,7 @@ class ProductController extends Controller
         }
         $products->cate_id = $request->input('cate_id');
         $products->name = $request->input('name');
+        $products->slug = $request->input('slug');
         $products->small_description = $request->input('small_description');
         $products->description = $request->input('description');
         $products->original_price = $request->input('original_price');
@@ -71,6 +72,7 @@ class ProductController extends Controller
             $products->image = $filename;
         }
         $products->name = $request->input('name');
+        $products->slug = $request->input('slug');
         $products->small_description = $request->input('small_description');
         $products->description = $request->input('description');
         $products->original_price = $request->input('original_price');

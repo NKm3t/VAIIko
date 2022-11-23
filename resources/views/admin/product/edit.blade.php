@@ -19,6 +19,10 @@
                         <label for="">Meno</label>
                         <input type="text" class="form-control border" value="{{ $products->name }}" name="name">
                     </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Slug</label>
+                        <input type="text" class="form-control border" value="{{ $products->slug }}" name="slug">
+                    </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Stručný popis</label>
                         <textarea name="small_description" class="form-control border">{{ $products->small_description }}</textarea>

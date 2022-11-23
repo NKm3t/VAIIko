@@ -16,7 +16,7 @@
                                     <div class="card">
                                         <img src="{{ asset('assets/uploads/category/'.$cate->image) }}" alt="Obrazok">
                                         <div class="card-body">
-                                            <a href="{{ url('view-fcategory/'.$cate->id) }}">
+                                            <a href="{{ url('view-fcategory/'.$cate->slug) }}">
                                             <h5>{{ $cate->name }}</h5>
                                             </a>
                                             <p>{{ $cate->description }}</p>

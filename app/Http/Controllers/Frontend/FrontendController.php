@@ -21,10 +21,35 @@ class FrontendController extends Controller
         return view('frontend.fcategory', compact('fcategory'));
     }
 
-    public function viewfcategory($id)
+    public function viewfcategory($slug)
     {
-        $category = Category::find($id);
-        $products = Product::where('cate_id', $category->id)->where('status', '0')->get();
-        return view('frontend.products.index', compact('category', 'products'));
+        if (Category::where('slug', $slug)->exists())
+        {
+            $category = Category::where('slug', $slug)->first();
+            $products = Product::where('cate_id', $category->id)->where('status', '0')->get();
+            return view('frontend.products.index', compact('category', 'products'));
+        }
+        else {
+            return redirect('/')->with('status', "Slug je neplatny");
+        }
     }
+
+    public function productview($cate_slug, $prod_slug)
+    {
+        if (Category::where('slug', $cate_slug)->exists())
+        {
+            if (Product::where('slug', $prod_slug)->exists())
+            {
+                $products = Product::where('slug', $prod_slug)->first();
+                return view('frontend.products.view', compact('products'));
+            }
+            else {
+                return redirect('/')->with('status', "Link je neplatny");
+            }
+        }
+        else {
+            return redirect('/')->with('status', "Link je neplatny");
+        }
+    }
+
 }

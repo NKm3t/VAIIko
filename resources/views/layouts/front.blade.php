@@ -12,8 +12,7 @@
 
     <!--       Fonts and icons       -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
@@ -22,6 +21,9 @@
     <link href="/Frontend/CSS/custom.css" rel="stylesheet" />
     <link href="/Frontend/CSS/owl.carousel.min.css" rel="stylesheet" />
     <link href="/Frontend/CSS/owl.theme.default.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css" integrity="sha384-z4tVnCr80ZcL0iufVdGQSUzNvJsKjEtqYZjiQrrYKlpGow+btDHDfQWkFjoaz/Zr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
     <style>
         a{
             color: #000;
@@ -31,11 +33,11 @@
 </head>
 <body>
     @include('layouts.inc.frontnavbar')
-    <div class="g-sidenav-show ">
-        <div class="container-fluid">
+
+        <div class="conta">
             @yield('content')
         </div>
-    </div>
+
 
     <!-- Scripts -->
     <script src="/Frontend/js/bootstrap.bundle.min.js"></script>
