@@ -29,7 +29,7 @@
                         <label for="">Populárne</label>
                         <input type="checkbox" name="popular">
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 mb-3">
                         <input type="file" name="image" class="form-control border">
                     </div>
                     <div class="col-md-12">

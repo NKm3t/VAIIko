@@ -5,9 +5,14 @@
 @endsection
 
 @section('content')
-    <div class="py-3 mb-4 shadow-sm bg-warning border-top">
+    <div class="py-3 mb-4 border-top">
         <div class="container">
-            <h6 class="mb-0">Domov / {{$category->name}}</h6>
+            <h6 class="mb-0">
+                <a href="{{ url('fcategory') }}" class="navigation">
+                    Domov
+                </a>
+                <a class="navigation"> / {{$category->name}}</a>
+            </h6>
         </div>
     </div>
     <div class="py-5">

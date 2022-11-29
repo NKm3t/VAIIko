@@ -33,6 +33,7 @@
     <script>
         $('.featured-carousel').owlCarousel({
             loop:true,
+            center:true,
             margin:10,
             nav: true,
             dots: false,

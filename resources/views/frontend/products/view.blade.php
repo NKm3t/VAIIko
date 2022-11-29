@@ -5,14 +5,22 @@
 @endsection
 
 @section('content')
-    <div class="py-3 mb-4 shadow-sm bg-warning border-top">
+    <div class="py-3 mb-4 border-top">
         <div class="container">
-            <h6 class="mb-0">Domov / {{$products->category->name}} / {{$products->name}}</h6>
+            <h6 class="navigation-text mb-0">
+                <a href="{{ url('fcategory') }}" class="navigation">
+                    Domov
+                </a> <a class="navigation"> / </a>
+                <a href="{{ url('view-fcategory/'.$products->category->slug) }}" class="navigation">
+                    {{$products->category->name}}
+                </a>
+                <a class="navigation"> / {{$products->name}}</a>
+            </h6>
         </div>
     </div>
 
     <div class="container">
-        <div class="card shadow">
+        <div class="card shadow product_data">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
@@ -37,14 +45,17 @@
                         @endif
                         <hr>
                         <div class="row mt-2">
-                            <div class="input-group mb-3 ">
-                                <button class="input-group-text decrement-btn">-</button>
-                                <input type="text" name="quantity" value="1" class="form-control qty-input text-center" />
-                                <button class="input-group-text increment-btn">+</button>
+                            <div class="col-md-3">
+                                <input type="hidden" value="{{ $products->id }}" class="prod_id">
+                                <div class="input-group mb-3 ">
+                                    <button class="input-group-text decrement-btn">-</button>
+                                    <input type="text" name="quantity" value="1" class="form-control qty-input text-center" />
+                                    <button class="input-group-text increment-btn">+</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-10">
-                            <button type="button" class="btn btn-primary me-3">Do košíka <i class="bi bi-cart-fill"></i></button>
+                        <div class="col-md-9">
+                            <button type="button" class="btn btn-primary me-3 addToCartBtn">Do košíka <i class="bi bi-cart-fill"></i></button>
                         </div>
                     </div>
                 </div>
@@ -60,35 +71,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('scripts')
-    <script>
-        $(document).ready(function () {
-            $('.increment-btn').click(function (e){
-               e.preventDefault();
-
-               var inc_value = $('.qty-input').val();
-               var value = parseInt(inc_value, 10);
-               value = isNaN(value) ? 0 : value;
-               if (value < 100000000)
-               {
-                   value++;
-                   $('.qty-input').val(value);
-               }
-            });
-            $('.decrement-btn').click(function (e){
-                e.preventDefault();
-
-                var dec_value = $('.qty-input').val();
-                var value = parseInt(dec_value, 10);
-                value = isNaN(value) ? 1 : value;
-                if (value > 1)
-                {
-                    value--;
-                    $('.qty-input').val(value);
-                }
-            });
-        });
-    </script>
 @endsection

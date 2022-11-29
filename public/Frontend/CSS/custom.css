@@ -1,3 +1,22 @@
 .input-group{
     width: 160px;
 }
+
+.navigation{
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 3px;
+}
+
+.navbar{
+    background-color: #ab6934;
+}
+
+.navbar-brand{
+    font-family: "Sofia", sans-serif;
+    font-size: 20px;
+}
+
+.table-cart td{
+    vertical-align: middle;
+}

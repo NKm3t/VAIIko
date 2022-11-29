@@ -24,8 +24,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css" integrity="sha384-z4tVnCr80ZcL0iufVdGQSUzNvJsKjEtqYZjiQrrYKlpGow+btDHDfQWkFjoaz/Zr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <style>
         a{
+            text-decoration: none;
             color: #000;
         }
     </style>
@@ -43,6 +45,7 @@
     <script src="/Frontend/js/bootstrap.bundle.min.js"></script>
     <script src="/Frontend/js/jquery-3.6.1.min.js"></script>
     <script src="/Frontend/js/owl.carousel.min.js"></script>
+    <script src="/Frontend/js/custom.js"></script>
 
     @yield('scripts')
 </body>

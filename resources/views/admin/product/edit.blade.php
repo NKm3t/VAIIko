@@ -52,9 +52,9 @@
                         <input type="checkbox" value="{{ $products->trending == "1" ? 'checked' : '' }}" name="trending">
                     </div>
                     @if($products->image)
-                        <img src="{{ asset('assets/uploads/products/'.$products->image) }}" alt="Obrazok produktu">
+                        <img src="{{ asset('assets/uploads/products/'.$products->image) }}" alt="Obrazok produktu" class="mb-3">
                     @endif
-                    <div class="col-md-12">
+                    <div class="col-md-12 mb-3">
                         <input type="file" name="image" class="form-control border">
                     </div>
                     <div class="col-md-12">

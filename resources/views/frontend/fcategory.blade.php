@@ -14,13 +14,14 @@
                         @foreach($fcategory as $cate)
                             <div class="col-md-2 mb-3">
                                     <div class="card">
-                                        <img src="{{ asset('assets/uploads/category/'.$cate->image) }}" alt="Obrazok">
+                                        <a href="{{ url('view-fcategory/'.$cate->slug) }}">
+                                        <img src="{{ asset('assets/uploads/category/'.$cate->image) }}" class="w-100" alt="Obrazok">
                                         <div class="card-body">
-                                            <a href="{{ url('view-fcategory/'.$cate->slug) }}">
                                             <h5>{{ $cate->name }}</h5>
-                                            </a>
+
                                             <p>{{ $cate->description }}</p>
                                         </div>
+                                        </a>
                                     </div>
                             </div>
                         @endforeach
