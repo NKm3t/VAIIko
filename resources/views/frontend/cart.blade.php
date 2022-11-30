@@ -19,61 +19,49 @@
     </div>
 
     <div class="container my-5">
-        <div class="card shadow product_data">
+        <div class="card shadow ">
             <div class="card-body">
                 <table class="table table-cart table-striped">
                     <thead>
                     <tr>
                         <th>Obrazok</th>
                         <th>Názov</th>
+                        <th>Cena</th>
                         <th>Mnozstvo</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
+                    @php $total = 0; @endphp
                     @foreach ($cartItems as $item)
-                        <tr>
+                        <tr class="product_data">
                             <td>
                                 <img src="{{ asset('assets/uploads/products/'.$item->products->image) }}" height="70px" width="70px" alt="Obrázok">
                             </td>
                             <td>{{ $item->products->name }}</td>
+                            <td>{{ $item->products->original_price." €" }}</td>
                             <td>
                                 <input type="hidden" class="prod_id" value="{{ $item->prod_id }}">
                                 <div class="input-group mb-3 ">
-                                    <button class="input-group-text decrement-btn">-</button>
+                                    <button class="input-group-text changeQuantity decrement-btn">-</button>
                                     <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ $item->prod_qty }}"/>
-                                    <button class="input-group-text increment-btn">+</button>
+                                    <button class="input-group-text changeQuantity increment-btn">+</button>
                                 </div>
                             </td>
                             <td>
                                 <button class="btn btn-danger delete-cart-item"><i class="bi bi-trash"></i> Remove</button>
                             </td>
                         </tr>
+                        @php $total += $item->products->original_price * $item->prod_qty; @endphp
                     @endforeach
                     </tbody>
                 </table>
-                {{--                @foreach($cartItems as $item)--}}
-{{--                    <div class="row">--}}
-{{--                        <div class="col-md-2">--}}
-{{--                            <img src="{{ asset('assets/uploads/products/'.$item->products->image) }}" height="70px" width="70px" alt="Obrazok">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-md-5">--}}
-{{--                            <h6>{{ $item->products->name }}</h6>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-md-3">--}}
-{{--                            <input type="hidden" class="prod_id" value="{{ $item->prod_id }}">--}}
-{{--                            <label for="Quantity">Množstvo</label>--}}
-{{--                            <div class="input-group mb-3 ">--}}
-{{--                                <button class="input-group-text decrement-btn">-</button>--}}
-{{--                                <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ $item->prod_qty }}"/>--}}
-{{--                                <button class="input-group-text increment-btn">+</button>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-md-2">--}}
-{{--                            <button class="btn btn-danger delete-cart-item"><i class="bi bi-trash"></i> Remove</button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endforeach--}}
+                <div class="card-footer">
+                    <h6>Cena spolu: {{$total}} €
+                        <button class="btn btn-success float-end">Pokracovat</button>
+                    </h6>
+
+                </div>
             </div>
         </div>
     </div>
