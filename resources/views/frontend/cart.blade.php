@@ -20,14 +20,15 @@
 
     <div class="container my-5">
         <div class="card shadow ">
+            @if($cartItems->count() > 0)
             <div class="card-body">
                 <table class="table table-cart table-striped">
                     <thead>
                     <tr>
-                        <th>Obrazok</th>
+                        <th>Obrázok</th>
                         <th>Názov</th>
                         <th>Cena</th>
-                        <th>Mnozstvo</th>
+                        <th>Množstvo</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -39,7 +40,7 @@
                                 <img src="{{ asset('assets/uploads/products/'.$item->products->image) }}" height="70px" width="70px" alt="Obrázok">
                             </td>
                             <td>{{ $item->products->name }}</td>
-                            <td>{{ $item->products->original_price." €" }}</td>
+                            <td>{{ $item->products->selling_price." €" }}</td>
                             <td>
                                 <input type="hidden" class="prod_id" value="{{ $item->prod_id }}">
                                 <div class="input-group mb-3 ">
@@ -49,20 +50,27 @@
                                 </div>
                             </td>
                             <td>
-                                <button class="btn btn-danger delete-cart-item"><i class="bi bi-trash"></i> Remove</button>
+                                <button class="btn btn-danger delete-cart-item"><i class="bi bi-trash"></i> Vymazať</button>
                             </td>
                         </tr>
-                        @php $total += $item->products->original_price * $item->prod_qty; @endphp
+                        @php $total += $item->products->selling_price * $item->prod_qty; @endphp
                     @endforeach
                     </tbody>
                 </table>
+
+            </div>
                 <div class="card-footer">
                     <h6>Cena spolu: {{$total}} €
-                        <button class="btn btn-success float-end">Pokracovat</button>
+                        <a href="{{ url('checkout') }}" class="btn btn-success float-end">Pokračovať</a>
                     </h6>
 
                 </div>
-            </div>
+            @else
+                <div class="card-body text-center">
+                    <h2>Váš <i class="bi bi-cart"></i> košík je prázdny</h2>
+                    <a href="{{ url('fcategory') }}" class="btn btn-outline-primary float-end"> Pokračovať k nákupu</a>
+                </div>
+            @endif
         </div>
     </div>
 @endsection
