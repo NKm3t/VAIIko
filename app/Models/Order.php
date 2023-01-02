@@ -24,4 +24,9 @@ class Order extends Model
         'total_price',
         'tracking_no',
     ];
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 }

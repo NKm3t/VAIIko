@@ -42,6 +42,10 @@
                                     Môj účet
                                 </a>
                             </li>
+                            <li><a class="dropdown-item" href="{{ url('my-orders') }}">
+                                    Moje objednavky
+                                </a>
+                            </li>
                             @if(Auth::user()->role_as == '1')
                                 <li><a class="dropdown-item" href="{{url('/dashboard')}}">
                                         Admin stránka
