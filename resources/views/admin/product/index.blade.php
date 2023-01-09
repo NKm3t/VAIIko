@@ -12,7 +12,7 @@
                     <th>Id</th>
                     <th>Kategória</th>
                     <th>Názov</th>
-                    <th>Originál cena</th>
+                    <th>Cena</th>
                     <th>Cena po zľave</th>
                     <th>Obrázok</th>
                     <th></th>

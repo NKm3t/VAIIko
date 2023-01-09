@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('prod_id');
             $table->string('prod_qty');
+            $table->string('note');
             $table->timestamps();
         });
     }

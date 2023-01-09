@@ -22,7 +22,7 @@
         <form action="{{ url('place-order') }}" method="POST">
             {{ csrf_field() }}
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <h6>Základné informácie</h6>
@@ -74,6 +74,7 @@
                                     <tr>
                                         <th>Názov</th>
                                         <th>Množstvo</th>
+                                        <th>Poznámka</th>
                                         <th>Cena</th>
                                     </tr>
                                 </thead>
@@ -82,6 +83,7 @@
                                         <tr>
                                             <td>{{ $item->products->name }}</td>
                                             <td>{{ $item->prod_qty }} ks</td>
+                                            <td>{{ $item->note }}</td>
                                             <td>{{ $item->products->selling_price * $item->prod_qty }} €</td>
                                         </tr>
                                     @endforeach

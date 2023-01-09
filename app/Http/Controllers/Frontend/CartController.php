@@ -15,6 +15,7 @@ class CartController extends Controller
     {
         $product_id = $request->input('product_id');
         $product_qty = $request->input('product_qty');
+        $product_note = $request->input('product_note');
 
         if (Auth::check()) {
             $prod_check = Product::where('id', $product_id)->first();
@@ -28,6 +29,7 @@ class CartController extends Controller
                     $cartItem->prod_id = $product_id;
                     $cartItem->user_id = Auth::id();
                     $cartItem->prod_qty = $product_qty;
+                    $cartItem->note = $product_note;
                     $cartItem->save();
                     return response()->json(['status' => $prod_check->name." pridane do kosika"]);
                 }
@@ -63,14 +65,22 @@ class CartController extends Controller
     {
         $prod_id = $request->input('prod_id');
         $product_qty = $request->input('prod_qty');
+        //$prod_note = $request->input('prod_note');
 
         if (Auth::check()) {
             if (Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->exists()) {
                 $cart = Cart::where('prod_id', $prod_id)->where('user_id', Auth::id())->first();
                 $cart->prod_qty = $product_qty;
+                //$cart->note = $prod_note;
                 $cart->update();
-                return response()->json(['status' => "Produkt vymazany"]);
+                return response()->json(['status' => ""]);
             }
         }
+    }
+
+    public function cartcount()
+    {
+        $cartcount = Cart::where('user_id', Auth::id())->count();
+        return response()->json(['count'=> $cartcount]);
     }
 }

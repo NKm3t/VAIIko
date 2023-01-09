@@ -1,10 +1,31 @@
 $(document).ready(function () {
 
+    loadcart();
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    function loadcart() {
+        $.ajax({
+            method: "GET",
+            url: "/load-cart-data",
+            success: function (response) {
+                $('.cart-count').html('');
+                $('.cart-count').html(response.count);
+            }
+        });
+    }
+
     $('.addToCartBtn').click(function (e) {
         e.preventDefault();
 
         var product_id = $(this).closest('.product_data').find('.prod_id').val();
         var product_qty = $(this).closest('.product_data').find('.qty-input').val();
+        var product_note = $(this).closest('.product_data').find('.note-input').val();
+
 
         $.ajaxSetup({
             headers: {
@@ -18,10 +39,13 @@ $(document).ready(function () {
             data: {
                 "product_id": product_id,
                 "product_qty": product_qty,
+                "product_note": product_note,
             },
             dataType: "dataType",
             success: function (response) {
+                loadcart();
                 alert(response.status);
+
             }
         });
     });
@@ -91,6 +115,33 @@ $(document).ready(function () {
             data: {
                 'prod_id': prod_id,
                 'prod_qty': qty,
+            },
+            success: function (response) {
+                window.location.reload();
+                //alert(response.status, "success");
+            }
+        });
+    });
+
+    $('.changeNote').click(function (e){
+        e.preventDefault();
+        var prod_id = $(this).closest('.product_data').find('.prod_id').val();
+        var prod_note = $(this).closest('.product_data').find('.note-input').val();
+
+        $(this).closest('.product_data').find('.note-input').val(prod_note);
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            method: "POST",
+            url: "update-cart",
+            data: {
+                'prod_id': prod_id,
+                'prod_note': prod_note,
             },
             success: function (response) {
                 window.location.reload();

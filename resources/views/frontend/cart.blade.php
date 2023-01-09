@@ -29,6 +29,7 @@
                         <th>Názov</th>
                         <th>Cena</th>
                         <th>Množstvo</th>
+                        <th>Poznámka</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -48,6 +49,11 @@
                                     <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ $item->prod_qty }}"/>
                                     <button class="input-group-text changeQuantity increment-btn">+</button>
                                 </div>
+                            </td>
+                            <td>{{ $item->note }}
+                                <!--<input type="hidden" class="prod_id" value="{{ $item->prod_id }}">
+                                <input type="text" name="note" value="{{ $item->note }}" class="note note-input">
+                                <button class="btn btn-success changeNote">ok</button>-->
                             </td>
                             <td>
                                 <button class="btn btn-danger delete-cart-item"><i class="bi bi-trash"></i> Vymazať</button>

@@ -17,19 +17,28 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white {{ Request::is('category') ? 'active bg-gradient-primary':'' }}" href="{{ url('category') }}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">content_paste</i>
-                    </div>
-                    <span class="nav-link-text ms-1">Categories</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link text-white {{ Request::is('add-category') ? 'active bg-gradient-primary':'' }}" href="{{ url('add-category') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">add</i>
                     </div>
                     <span class="nav-link-text ms-1">Pridať kategóriu</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{ Request::is('add-products') ? 'active bg-gradient-primary':'' }}" href="{{ url('add-products') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">add</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Pridať produkt</span>
+                </a>
+            </li>
+            <hr class="horizontal light mt-0 mb-2">
+            <li class="nav-item">
+                <a class="nav-link text-white {{ Request::is('category') ? 'active bg-gradient-primary':'' }}" href="{{ url('category') }}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">content_paste</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Kategórie</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -41,11 +50,12 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white {{ Request::is('add-products') ? 'active bg-gradient-primary':'' }}" href="{{ url('add-products') }}">
+                <a class="nav-link text-white {{ Request::is('orders') ? 'active bg-gradient-primary':'' }}"
+                   href="{{ url('orders') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">add</i>
+                        <i class="material-icons opacity-10">content_paste</i>
                     </div>
-                    <span class="nav-link-text ms-1">Pridať produkt</span>
+                    <span class="nav-link-text ms-1">Objednávky</span>
                 </a>
             </li>
         </ul>

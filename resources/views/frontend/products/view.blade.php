@@ -54,7 +54,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-9">
+                        <div>
+                            <label class="mt-1">Poznámka:</label>
+                            <div>
+                                <input type="text" name="note" value="" class="note note-input">
+                            </div>
+                        </div>
+                        <div class="row-md-9 float-end">
                             <button type="button" class="btn btn-primary me-3 addToCartBtn">Do košíka <i class="bi bi-cart-fill"></i></button>
                         </div>
                     </div>

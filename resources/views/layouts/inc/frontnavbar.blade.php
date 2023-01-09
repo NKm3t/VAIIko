@@ -13,7 +13,13 @@
                     <a class="nav-link " href="{{ url('fcategory') }}">Kategórie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="{{ url('cart') }}">Košík</a>
+                    <a class="nav-link " href="{{ url('/about') }}">O nás
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="{{ url('cart') }}">Košík
+                        <span class="badge badge-pill cart-count">0</span>
+                    </a>
                 </li>
             </ul>
 
@@ -38,12 +44,8 @@
                             {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">
-                                    Môj účet
-                                </a>
-                            </li>
                             <li><a class="dropdown-item" href="{{ url('my-orders') }}">
-                                    Moje objednavky
+                                    Moje objednávky
                                 </a>
                             </li>
                             @if(Auth::user()->role_as == '1')
