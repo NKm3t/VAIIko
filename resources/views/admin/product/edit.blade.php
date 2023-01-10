@@ -40,16 +40,12 @@
                         <input type="number" value="{{ $products->selling_price }}" name="selling_price" class="form-control border">
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="">Daň</label>
-                        <input type="number" value="{{ $products->tax }}" name="tax" class="form-control border">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="">Status</label>
+                        <label for="">Schovať</label>
                         <input type="checkbox" {{ $products->status == "1" ? 'checked' : '' }} name="status">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Trend</label>
-                        <input type="checkbox" value="{{ $products->trending == "1" ? 'checked' : '' }}" name="trending">
+                        <input type="checkbox" {{ $products->trending == "1" ? 'checked' : '' }} name="trending">
                     </div>
                     @if($products->image)
                         <img src="{{ asset('assets/uploads/products/'.$products->image) }}" alt="Obrazok produktu" class="mb-3">

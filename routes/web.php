@@ -14,7 +14,7 @@ Route::get('/', [FrontendController::class, 'index']);
 Route::get('fcategory', [FrontendController::class, 'fcategory']);
 Route::get('view-fcategory/{slug}', [FrontendController::class, 'viewfcategory']);
 Route::get('category/{cate_slug}/{prod_slug}', [FrontendController::class, 'productview']);
-Route::get('about', [HomeController::class, 'about']);
+Route::get('about', [FrontendController::class, 'about']);
 
 Auth::routes();
 

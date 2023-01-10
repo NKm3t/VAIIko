@@ -26,7 +26,12 @@
                                 <img src="{{ asset('assets/uploads/products/'.$prod->image) }}" class="w-100" alt="Obrazok">
                                 <div class="card-body">
                                     <h5>{{ $prod->name }}</h5>
-                                    <span class="float-end">{{ $prod->original_price.' €' }}</span>
+                                    @if ($prod->selling_price == null)
+                                        <span class="float-end">{{ $prod->original_price.' €' }}</span>
+                                    @else
+                                        <span class="float-end font-weight-bold">{{ $prod->selling_price.' €' }}</span>
+                                        <span class="float-end me-3"><del>{{ $prod->original_price.' €' }}</del></span>
+                                    @endif
                                 </div>
                             </a>
                         </div>

@@ -35,11 +35,11 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Cena</label>
-                        <input type="number" name="original_price" class="form-control border">
+                        <input type="number" step="any" min="0" name="original_price" class="form-control border">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Cena po zľave</label>
-                        <input type="number" name="selling_price" class="form-control border">
+                        <input type="number" step="any" min="0" name="selling_price" class="form-control border">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Daň</label>

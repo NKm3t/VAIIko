@@ -29,7 +29,7 @@
                     <div class="col-md-8">
                         <h2 class="mb-0">
                             {{$products->name}}
-                            @if ($products->trending == 1)
+                            @if ($products->selling_price != null)
                                 <label style="font-size: 16px;" class="float-end badge bg-danger">Akcia</label>
                             @endif
                         </h2>
@@ -38,9 +38,9 @@
                             {{ $products->small_description }}
                         </p>
                         @if ($products->selling_price == null)
-                            <label class="me-3">Cena: {{$products->original_price}} €</label>
+                            <label class="me-3">Cena: {{$products->original_price}}€</label>
                         @else
-                            <label class="me-3">Cena: {{$products->original_price}} €</label> <br>
+                            <label class="me-3">Cena: <del>{{$products->original_price}}</del> €</label> <br>
                             <label class="fw-bold">Zľavnená cena: {{$products->selling_price}} €</label>
                         @endif
                         <hr>
@@ -67,12 +67,11 @@
                 </div>
                 <hr>
                 <div class="col-md-8">
-                    <h2 class="mb-0">
+                    <h4 class="mb-0">
                         Popis
-                    </h2>
-                    <p class="mt-3">
-                        {{ $products->description }}
-                    </p>
+                    </h4>
+                    <pre class="mt-3">{{ $products->description }}
+                    </pre>
                 </div>
             </div>
         </div>

@@ -10,9 +10,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2>Všetky kategórie</h2>
-                    <div class="row">
+                    <div class="row justify-content-center">
                         @foreach($fcategory as $cate)
-                            <div class="col-md-2 mb-3">
+                            <div class="col-md-3 mb-3 ">
                                     <div class="card">
                                         <a href="{{ url('view-fcategory/'.$cate->slug) }}">
                                         <img src="{{ asset('assets/uploads/category/'.$cate->image) }}" class="w-100" alt="Obrazok">
