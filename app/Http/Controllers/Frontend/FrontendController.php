@@ -7,20 +7,33 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+/**
+ *
+ */
 class FrontendController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index()
     {
         $featured_products = Product::where('trending', '1')->take(15)->get();
         return view('frontend.index', compact('featured_products'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function fcategory()
     {
         $fcategory = Category::where('status', '0')->get();
         return view('frontend.fcategory', compact('fcategory'));
     }
 
+    /**
+     * @param $slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function viewfcategory($slug)
     {
         if (Category::where('slug', $slug)->exists())
@@ -34,6 +47,11 @@ class FrontendController extends Controller
         }
     }
 
+    /**
+     * @param $cate_slug
+     * @param $prod_slug
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function productview($cate_slug, $prod_slug)
     {
         if (Category::where('slug', $cate_slug)->exists())
@@ -50,6 +68,14 @@ class FrontendController extends Controller
         else {
             return redirect('/')->with('status', "Link je neplatny");
         }
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function about()
+    {
+        return view('frontend.about');
     }
 
 }
