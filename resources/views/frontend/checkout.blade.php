@@ -29,36 +29,39 @@
                             <hr>
                             <div class="row checkout-form">
                                 <div class="col-md-6">
-                                    <label for="">Meno</label>
-                                    <input type="text" value="{{ Auth::user()->name }}" name="firstName" class="form-control">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="">Priezvisko</label>
-                                    <input type="text" value="{{ Auth::user()->lastName }}" name="lastName" class="form-control">
+                                    <label for="">Meno priezvisko</label>
+                                    <input type="text" value="{{ Auth::user()->name }}" name="firstName" required class="form-control firstName">
+                                    <span id="fname_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Email</label>
-                                    <input type="text" value="{{ Auth::user()->email }}" name="email" class="form-control">
+                                    <input type="text" value="{{ Auth::user()->email }}" name="email" required class="form-control email">
+                                    <span id="email_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Telefón</label>
-                                    <input type="text" value="{{ Auth::user()->phone }}" name="phone" class="form-control">
+                                    <input type="text" value="{{ Auth::user()->phone }}" name="phone" required class="form-control phone">
+                                    <span id="phone_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Ulica</label>
-                                    <input type="text" value="{{ Auth::user()->street}}" name="street" class="form-control">
+                                    <input type="text" value="{{ Auth::user()->street}}" name="street" required class="form-control street">
+                                    <span id="street_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Mesto</label>
-                                    <input type="text" value="{{ Auth::user()->city }}" name="city" class="form-control">
+                                    <input type="text" value="{{ Auth::user()->city }}" name="city" required class="form-control city">
+                                    <span id="city_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">PSČ</label>
-                                    <input type="text" value="{{ Auth::user()->postCode }}" name="postCode" class="form-control">
+                                    <input type="text" value="{{ Auth::user()->postCode }}" name="postCode" required class="form-control postCode">
+                                    <span id="postCode_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Štát</label>
-                                    <input type="text" value="{{ Auth::user()->state }}" name="state" class="form-control">
+                                    <input type="text" value="{{ Auth::user()->state }}" name="state" required class="form-control state">
+                                    <span id="state_error" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +93,7 @@
                                 </tbody>
                             </table>
                             <hr>
-                            <button type="submit" class="btn btn-primary float-end">Objednať</button>
+                            <button type="submit" class="btn btn-primary float-end checkout-btn">Objednať</button>
                         </div>
                     </div>
                 </div>
