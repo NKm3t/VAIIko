@@ -19,7 +19,7 @@
     </div>
 
     <div class="container my-5">
-        <div class="card shadow ">
+        <div class="card shadow cartItems">
             @if($cartItems->count() > 0)
             <div class="card-body">
                 <table class="table table-cart table-striped">
@@ -41,7 +41,7 @@
                                 <img src="{{ asset('assets/uploads/products/'.$item->products->image) }}" height="70px" width="70px" alt="Obrázok">
                             </td>
                             <td>{{ $item->products->name }}</td>
-                            <td>{{ $item->products->selling_price." €" }}</td>
+                            <td>{{ $item->products->original_price ." €" }}</td>
                             <td>
                                 <input type="hidden" class="prod_id" value="{{ $item->prod_id }}">
                                 <div class="input-group mb-3 ">
@@ -59,7 +59,7 @@
                                 <button class="btn btn-danger delete-cart-item"><i class="bi bi-trash"></i> Vymazať</button>
                             </td>
                         </tr>
-                        @php $total += $item->products->selling_price * $item->prod_qty; @endphp
+                        @php $total += $item->products->original_price * $item->prod_qty; @endphp
                     @endforeach
                     </tbody>
                 </table>
