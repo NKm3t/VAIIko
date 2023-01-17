@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
+    /**
+     * Prida produkt do kosika, kontroluje ci uz sa dany produkt nenachadza v kosiku
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse|void
+     */
     public function addProduct(Request $request)
     {
         $product_id = $request->input('product_id');
@@ -40,12 +45,21 @@ class CartController extends Controller
         }
     }
 
+    /**
+     * Zobrazi kosik s produktami
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function viewCart()
     {
         $cartItems = Cart::where('user_id', Auth::id())->get();
         return view('frontend.cart', compact('cartItems'));
     }
 
+    /**
+     * Vymaze produkt z kosika
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse|void
+     */
     public function deleteProduct(Request $request)
     {
         if (Auth::check()) {
@@ -61,6 +75,11 @@ class CartController extends Controller
         }
     }
 
+    /**
+     * Aktualizuje kosik, pri zmene poctu produktov
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse|void
+     */
     public function updateCart(Request $request)
     {
         $prod_id = $request->input('prod_id');
@@ -78,6 +97,10 @@ class CartController extends Controller
         }
     }
 
+    /**
+     * Zobrazuje pocet produktov v kosiku
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function cartcount()
     {
         $cartcount = Cart::where('user_id', Auth::id())->count();

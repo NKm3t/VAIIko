@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 class FrontendController extends Controller
 {
     /**
+     * Zobrazuje produkty, ktore su aktualne trend
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
@@ -22,6 +23,7 @@ class FrontendController extends Controller
     }
 
     /**
+     * Zobrazi stranku s kategoriami
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function fcategory()
@@ -31,6 +33,7 @@ class FrontendController extends Controller
     }
 
     /**
+     * Zobrazi produkty v danej kategorii podla slug
      * @param $slug
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
@@ -48,6 +51,7 @@ class FrontendController extends Controller
     }
 
     /**
+     * Zobrazi pohlad na zvoleny produkt v kategorii
      * @param $cate_slug
      * @param $prod_slug
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -71,6 +75,7 @@ class FrontendController extends Controller
     }
 
     /**
+     * Zobrazi stranku s informaciami o firme
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function about()

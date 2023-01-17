@@ -10,6 +10,7 @@ class AdminMiddleware
 {
     /**
      * Handle an incoming request.
+     * Presmerovava podla role uzivatela
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next

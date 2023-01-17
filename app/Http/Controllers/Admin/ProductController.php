@@ -10,18 +10,31 @@ use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
+    /**
+     * Zobrazi stranku s produktami
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index()
     {
         $products = Product::all();
         return view('admin.product.index', compact('products'));
     }
 
+    /**
+     * Zobrazi stranku na vytvorenie noveho produktu
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function add()
     {
         $category = Category::all();
         return view('admin.product.add', compact('category'));
     }
 
+    /**
+     * Vytvori v DB novy produkt
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function insert(Request $request)
     {
         $products = new Product();
@@ -48,12 +61,23 @@ class ProductController extends Controller
 
     }
 
+    /**
+     * Zobrazi stranku na editovanie produktov
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function edit($id)
     {
         $products = Product::find($id);
         return view('admin.product.edit', compact('products'));
     }
 
+    /**
+     * Aktualizuje v DB zmenene veci o produkte
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function update(Request $request, $id)
     {
         $products = Product::find($id);
@@ -84,6 +108,11 @@ class ProductController extends Controller
         return redirect('products')->with('status', "Produkt uspesne aktualizovany");
     }
 
+    /**
+     * Vymaze z DB produkt
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function destroy($id)
     {
         $products = Product::find($id);

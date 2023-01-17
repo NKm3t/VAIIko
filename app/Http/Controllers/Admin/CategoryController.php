@@ -9,17 +9,31 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
+
+    /**
+     * Zobrazi stranku s kategoriami
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index()
     {
         $category = Category::all();
         return view('admin.category.index', compact('category'));
     }
 
+    /**
+     * Zobrazi stranku na pridanie kategorie
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function add()
     {
         return view('admin.category.add');
     }
 
+    /**
+     * Vytvori v databaze novu kategoriu
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function insert(Request $request)
     {
         $category = new Category();
@@ -41,12 +55,23 @@ class CategoryController extends Controller
         return redirect('/dashboard')->with('status',"Kategória úspešne pridaná.");
     }
 
+    /**
+     * Vrati stranku na editovanie kategorie
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function edit($id)
     {
         $category = Category::find($id);
         return view('admin.category.edit', compact('category'));
     }
 
+    /**
+     * Aktualizuje v DB kategoriu
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function update(Request $request, $id)
     {
         $category = Category::find($id);
@@ -72,6 +97,11 @@ class CategoryController extends Controller
         return redirect('category')->with('status', 'Kategória úspešne upravená.');
     }
 
+    /**
+     * Vymaze z DB kategoriu
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function destroy($id)
     {
         $category = Category::find($id);

@@ -13,12 +13,21 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
+    /**
+     * Zobrazi produkty na checkout page, ktore boli v kosiku
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index()
     {
         $cartItems = Cart::where('user_id', Auth::id())->get();
         return view('frontend.checkout', compact('cartItems'));
     }
 
+    /**
+     * Vytvori objednavku v DB s priradenym cislom objednavky a informaciami o objednavatelovi
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function placeorder(Request $request)
     {
         $order = new Order();
