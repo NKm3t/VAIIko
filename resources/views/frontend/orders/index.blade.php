@@ -18,7 +18,7 @@
                             <thead>
                             <tr>
                                 <th>Dátum vytvorenia</th>
-                                <th>Čislo objednávky</th>
+                                <th>Číslo objednávky</th>
                                 <th>Cena spolu</th>
                                 <th>Stav</th>
                                 <th></th>
@@ -29,7 +29,7 @@
                                 <tr>
                                     <td>{{ date('d.m.Y', strtotime($item->created_at)) }}</td>
                                     <td>{{ $item->tracking_no }}</td>
-                                    <td>{{ $item->total_price }}</td>
+                                    <td>{{ $item->total_price. ' €' }}</td>
                                     <td>{{ $item->status == '0' ? 'Potvrdená' : 'Vybavená' }}</td>
                                     <td>
                                         <a href="{{ url('view-order/'.$item->id) }}" class="btn btn-primary">Zobraziť</a>
