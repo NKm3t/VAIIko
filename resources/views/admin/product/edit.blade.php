@@ -16,7 +16,7 @@
                         </select>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="">Meno</label>
+                        <label for="">Názov</label>
                         <input type="text" class="form-control border" value="{{ $products->name }}" name="name">
                     </div>
                     <div class="col-md-6 mb-3">
@@ -40,7 +40,7 @@
                         <input type="number" value="{{ $products->selling_price }}" name="selling_price" class="form-control border">
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="">Schovať</label>
+                        <label for="">Schovať produkt</label>
                         <input type="checkbox" {{ $products->status == "1" ? 'checked' : '' }} name="status">
                     </div>
                     <div class="col-md-6 mb-3">

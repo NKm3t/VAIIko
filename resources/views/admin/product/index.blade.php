@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h4>Produkty stranka</h4>
+            <h4>Produkty</h4>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped">
@@ -24,7 +24,7 @@
                         <td>{{ $item->id }}</td>
                         <td>{{ $item->category->name }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->original_price }}</td>
+                        <td>{{ $item->original_price. ' €' }}</td>
                         <td>{{ $item->selling_price }}</td>
                         <td>
                             <img src="{{ asset('assets/uploads/products/'.$item->image) }}" class="cate-image" alt="Obrázok tu">

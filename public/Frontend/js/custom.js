@@ -44,6 +44,7 @@ $(document).ready(function () {
             dataType: "dataType",
             success: function (response) {
                 loadcart();
+                window.location.reload(this);
                 //alert(response.status);
 
             }
